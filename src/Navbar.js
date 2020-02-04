@@ -11,22 +11,29 @@ class Navbar extends React.Component{
     }
     render (){
         return (
-                this.state.isOpen ?
-                <ul>
-                    {
-                        this.props.array.map((item, index)=> {
-                        return <li>{item}</li>
-                        })
-                    }
-                </ul>
-                : 
-                <a>Hamburger</a>
-        )
-    };
-    _toggleMenu = () => {
-        this.setState.isOpen = true
+            this.state.isOpen ?
+                <React.Fragment>
+                    <a onClick={this._toggleMenu}>🥞</a>
+                    <ul>
+                        {
+                            this.props.array.map((item, index) => {
+                                return <li key={index}>{item}</li>
+                            })
+                        }
+                    </ul>
+                </React.Fragment>
+                :
+                <a onClick={this._toggleMenu}>🍔</a>
+        );
     }
 
+    _toggleMenu = () => {
+        this.setState({
+            isOpen: !this.state.isOpen
+        }, () => {
+            console.log('menu toggled!');
+        });
+    } 
 }
 
 
