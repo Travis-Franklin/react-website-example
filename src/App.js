@@ -1,25 +1,25 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Header from './Header';
+import Footer from './Footer';
+import MainContent from './MainContent';
+import Navbar from './Navbar';
+
+let headerCopy = 'Amazing Full Stack web Developer';
+
+let websiteCopy = `strings and impsum asdf asdf asdf asdf ba ba blacksheep`;
+
+let linkNames = ['home', 'porttolio', 'Contact']
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <div className="container-fluid">
+     <Header jeff = {headerCopy}/>
+     <Navbar array = {linkNames}/>
+      <MainContent content = {websiteCopy}/>
+      <Footer/>
+   </div>
   );
 }
 
